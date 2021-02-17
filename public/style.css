@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+h1 {
+    background-color: aquamarine;
+}
+
+ul {
+    list-style-type: none;
+    display:inline;
+}
+

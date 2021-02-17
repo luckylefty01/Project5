@@ -74,26 +74,27 @@ class App extends React.Component {
     }
 
     render = () => {
-        return <div>
+        return <div class="container">
             <h2>Create To-Do</h2>
-            <form onSubmit={this.createTodo}>
-                <input onKeyUp={this.changeNewDescription} type="text" placeholder="description" /><br/>
-                <input type="submit" value="Add" />
+            <form className = "d-flex mt-5" onSubmit={this.createTodo}>
+                <input className = "form-control" onKeyUp={this.changeNewDescription} type="text" placeholder="description" /><br/>
+                <input class="btn btn-outline-primary" type="submit" value="Add" />
             </form>
             <h2>Things To-Do</h2>
-            <ul>
+            
+            <ul class="list-group">
                 {
                     this.state.todos.map(
                         (todo, index) => {
-                            return <li key={index}>
+                            return <li class="list-group-item" key={index}>
 
                                 {todo.description}
 
-                                <button value={todo.id} onClick={this.deleteTodo}>DELETE</button>
+                                <button class="btn btn-outline-danger"value={todo.id} onClick={this.deleteTodo}>DELETE</button>
 
                                 <form id={todo.id} onSubmit={this.updateTodo}>
                                     <input onKeyUp={this.changeUpdateDescription} type="text" placeholder="description"/><br/>
-                                    <input type="submit" value="Update To-Do"/>
+                                    <input class="btn btn-outline-warning" type="submit" value="Update"/>
                                 </form>
                             </li>
                         }
